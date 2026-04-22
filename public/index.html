@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> IoT Dashboard - Machine 1 </title>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>Machine 1 <span>Telemetry</span></h1>
+            <div class="status-indicator">
+                <div id="conn-dot" class="dot disconnected"></div>
+                <span id="conn-status">Waiting for link...</span>
+            </div>
+        </header>
+
+        <main class="grid-layout">
+            <!-- Temp Widget -->
+            <div class="glass-card">
+                <div class="card-title">Temperature</div>
+                <div class="card-value"><span id="val-temp">--</span><span class="unit">°C</span></div>
+                <div class="progress-bar"><div class="fill" id="bar-temp" style="width: 0%;"></div></div>
+            </div>
+
+            <!-- Voltage Widget -->
+            <div class="glass-card">
+                <div class="card-title">Voltage</div>
+                <div class="card-value"><span id="val-volt">--</span><span class="unit">mV</span></div>
+                <div class="progress-bar"><div class="fill" id="bar-volt" style="width: 0%;"></div></div>
+            </div>
+
+            <!-- RPM Widget -->
+            <div class="glass-card">
+                <div class="card-title">RPM</div>
+                <div class="card-value"><span id="val-rpm">--</span><span class="unit">rev/m</span></div>
+                <div class="progress-bar"><div class="fill" id="bar-rpm" style="width: 0%;"></div></div>
+            </div>
+
+            <!-- Current Widget -->
+            <div class="glass-card">
+                <div class="card-title">Current</div>
+                <div class="card-value"><span id="val-current">--</span><span class="unit">mA</span></div>
+                <div class="progress-bar"><div class="fill" id="bar-current" style="width: 0%;"></div></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Socket.IO library (served by backend) -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
