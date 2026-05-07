@@ -3,7 +3,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const mqtt = require('mqtt');
 
-const webPort = 3000;
+const webPort = 80;
 
 const app        = express();
 const httpServer = http.createServer(app);
@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
 });
 
 // ── MQTT ───────────────────────────────────────────────────────
-const brokerUrl   = 'mqtt://139.59.38.168';
+const brokerUrl   = 'mqtt://64.227.162.243';
 const targetTopic = 'manku/factory/machine1';
 const mqttClient  = mqtt.connect(brokerUrl);
 
